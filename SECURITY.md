@@ -94,7 +94,7 @@ pinned alternative if you would rather trade one risk for the other.
 ## Reporting a vulnerability
 
 If you find a security problem, please **do not open a public issue**. Email the address
-on the [contact page](https://creativedigitalgrowth.github.io/contact/) with enough detail to
+on the [contact page](https://localseohub.github.io/contact/) with enough detail to
 reproduce it, and allow a reasonable window before disclosure.
 
 This is a personal blog maintained by one person, not a funded project — there is no

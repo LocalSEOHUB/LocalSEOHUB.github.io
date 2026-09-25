@@ -63,7 +63,7 @@ IDs, the contact endpoint and social links.
 dynamic routes ahead of rest parameters, and in a static build every path is enumerated
 up front, so the two cannot silently collide.
 
-Post URLs read `https://creativedigitalgrowth.github.io/blog/<slug>/` — the site root
+Post URLs read `https://localseohub.github.io/blog/<slug>/` — the site root
 plus the collection's route. Under the previous project site this doubled to
 `/blog/blog/<slug>/`, because the repo name and the route were both `blog`; moving to a
 user site removed the repetition.
@@ -105,7 +105,7 @@ through [`src/lib/url.ts`](../src/lib/url.ts)**, which exposes three functions:
 | `absFromBuiltPath(p, site)` | Paths *Astro* produced — they already carry the base | `Astro.url.pathname`, `ImageMetadata.src`, `paginate()` URLs |
 | `absUrl(p, site)` | Full absolute URL from a path you author | canonical, Open Graph, RSS, JSON-LD |
 
-That discipline is why moving this site from a project site (`aumniguest.github.io/blog/`,
+That discipline is why moving this site from a project site (`localseohub.github.io/blog/`,
 `base: '/blog/'`) to this user site was a config change and nothing else. Had paths been
 hardcoded, the move would have been a hunt through every template.
 
@@ -123,7 +123,7 @@ To re-check after any change, build and confirm this prints nothing:
 
 ```bash
 npm run build
-grep -rhoE 'https?://[^"< ]+' dist --include=*.html | grep -v 'creativedigitalgrowth.github.io' | sort -u
+grep -rhoE 'https?://[^"< ]+' dist --include=*.html | grep -v 'localseohub.github.io' | sort -u
 ```
 
 The full audit — every internal link, `srcset` entry and in-page anchor resolved against

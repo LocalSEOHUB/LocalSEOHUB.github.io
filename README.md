@@ -4,7 +4,8 @@ A static blog for a single author. Astro + TypeScript, Markdown content collecti
 Sveltia CMS at `/admin`, Pagefind search, Giscus comments, deployed to GitHub Pages by
 GitHub Actions.
 
-**Live:** <https://creativedigitalgrowth.github.io/>
+**Not yet deployed.** GitHub Pages is not yet enabled for this repository — once it is,
+the site will be live at <https://localseohub.github.io/>.
 
 No server, no database, no tracking scripts, no cookie banner, no CSS framework. Three
 runtime dependencies. The only client-side JavaScript is a theme toggle, a copy-link
@@ -48,7 +49,7 @@ Re-run it after every `npm install` or `npm ci`. CI on Linux is unaffected. Deta
 
 ## Writing a post
 
-Open [`/admin/`](https://creativedigitalgrowth.github.io/admin/) → **New Post** → uncheck
+Open [`/admin/`](https://localseohub.github.io/admin/) → **New Post** → uncheck
 **Draft** → **Save**. That commits to `main`, which builds and deploys.
 
 Or write the file directly — posts are Markdown in `src/content/blog/`, and the filename
@@ -89,15 +90,15 @@ move without hunting down hardcoded paths.
 To verify after any change, build and confirm every absolute URL points at this site:
 
 ```bash
-grep -rhoE 'https?://[^"< ]+' dist --include=*.html --include=*.xml   | grep -v 'creativedigitalgrowth.github.io' | sort -u
+grep -rhoE 'https?://[^"< ]+' dist --include=*.html --include=*.xml   | grep -v 'localseohub.github.io' | sort -u
 ```
 
 ## Status
 
-Deployed and verified against the live site on 2026-08-27: 18 routes returning `200`,
-drafts and unknown paths `404`, 553 internal references resolving with 0 broken, 0
-non-base-prefixed links, search working against the live index, `npm run check` clean.
-Pages is on GitHub Actions and deploys as a single green pipeline.
+Not yet deployed. This is a brand-new fork — GitHub Pages has not yet been enabled for
+this repository (Settings → Pages → source: GitHub Actions is a one-time step still to
+be done). The build and checks pass locally; nothing has been verified against a live
+site yet.
 
 Outstanding setup — none of it blocking, all of it in
 [docs/setup.md](docs/setup.md): the CMS token, Giscus IDs, contact form endpoint and

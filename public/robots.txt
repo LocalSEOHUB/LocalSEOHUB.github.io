@@ -1,4 +1,4 @@
-# Served at https://creativedigitalgrowth.github.io/robots.txt
+# Served at https://localseohub.github.io/robots.txt
 #
 # This is a GitHub Pages *user* site, so the file sits at the domain root and
 # crawlers honour it. (On a project site it would live under the repo sub-path,
@@ -8,4 +8,4 @@ User-agent: *
 Allow: /
 Disallow: /admin/
 
-Sitemap: https://creativedigitalgrowth.github.io/sitemap-index.xml
+Sitemap: https://localseohub.github.io/sitemap-index.xml

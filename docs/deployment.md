@@ -1,7 +1,7 @@
 # Deployment
 
-**Live:** <https://creativedigitalgrowth.github.io/>
-**Repository:** `CreativeDigitalGrowth/CreativeDigitalGrowth.github.io` — GitHub Pages **user** site, served from the domain root
+**Live:** <https://localseohub.github.io/>
+**Repository:** `LocalSEOHUB/LocalSEOHUB.github.io` — GitHub Pages **user** site, served from the domain root
 
 ## How it works
 
@@ -37,7 +37,7 @@ deploy a site whose search index is stale.
 ✅ Set correctly since 2026-08-27 — verify with:
 
 ```bash
-gh api repos/CreativeDigitalGrowth/CreativeDigitalGrowth.github.io/pages --jq '.build_type'   # expect: workflow
+gh api repos/LocalSEOHUB/LocalSEOHUB.github.io/pages --jq '.build_type'   # expect: workflow
 ```
 
 If it is ever switched back to *Deploy from a branch*, **two** pipelines fire on every
@@ -71,15 +71,15 @@ configuration is wrong.
 ## Verifying a deployment
 
 ```bash
-gh run list --repo CreativeDigitalGrowth/CreativeDigitalGrowth.github.io --limit 5
-gh run view <run-id> --repo CreativeDigitalGrowth/CreativeDigitalGrowth.github.io --log-failed
+gh run list --repo LocalSEOHUB/LocalSEOHUB.github.io --limit 5
+gh run view <run-id> --repo LocalSEOHUB/LocalSEOHUB.github.io --log-failed
 ```
 
 A quick smoke test against the live site — this is the check that actually matters,
 because it tests what visitors get rather than what the local build produced:
 
 ```bash
-B=https://creativedigitalgrowth.github.io
+B=https://localseohub.github.io
 for p in "" "blog/" "about/" "contact/" "search/" "admin/" "rss.xml" "sitemap-index.xml" "pagefind/pagefind-ui.js"; do
   echo "$(curl -s -o /dev/null -w '%{http_code}' -L "$B/$p")  /$p"
 done
@@ -92,13 +92,11 @@ All should return `200`. Then confirm nothing leaked:
 curl -s -o /dev/null -w '%{http_code}\n' -L "$B/blog/draft-not-for-production/"   # expect 404
 
 # no root-absolute internal references
-curl -s -L "$B/" | grep -ohE 'https?://[^"]+' | grep -v 'creativedigitalgrowth' | sort -u
+curl -s -L "$B/" | grep -ohE 'https?://[^"]+' | grep -v 'localseohub' | sort -u
 ```
 
-Last verified 2026-08-27 against the live site: 18 routes `200`, drafts and unknown
-paths `404`, 0 non-base-prefixed references across four pages, RSS containing exactly 3
-items, 16 sitemap URLs (`/search/` correctly filtered out), Pagefind index reporting 4
-indexed pages.
+Not yet verified against a live site — this is a brand-new fork and GitHub Pages has not
+been enabled yet. Run the checks above once Pages is on and a first deploy has gone out.
 
 ## Rollback
 
@@ -125,10 +123,10 @@ draft exclusion. Use `preview` before assuming a deploy will behave.
 
 ## Access
 
-Pushing requires write access to `CreativeDigitalGrowth/CreativeDigitalGrowth.github.io`. Changing repository settings —
-Pages source, Discussions, collaborators — requires **admin**, which is held by
-`CreativeDigitalGrowth`. The `mohiseen-aumni` account has Write only.
+Pushing requires write access to `LocalSEOHUB/LocalSEOHUB.github.io`. Changing repository
+settings — Pages source, Discussions, collaborators — requires **admin**. The `LocalSEOHUB`
+account owns this repository and has full admin access.
 
 ```bash
-gh api repos/CreativeDigitalGrowth/CreativeDigitalGrowth.github.io --jq '.permissions'
+gh api repos/LocalSEOHUB/LocalSEOHUB.github.io --jq '.permissions'
 ```

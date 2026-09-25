@@ -70,7 +70,7 @@ colon-space silently breaks the whole CMS.
 ```bash
 npm run check    # expect 0 errors
 npm run build
-grep -rhoE 'https?://[^"< ]+' dist --include=*.html | grep -v 'creativedigitalgrowth.github.io' | sort -u
+grep -rhoE 'https?://[^"< ]+' dist --include=*.html | grep -v 'localseohub.github.io' | sort -u
 ```
 
 The grep must print only genuinely external URLs (giscus, google maps, unpkg). If the change is visible in a browser, verify with
@@ -88,8 +88,8 @@ every push because Jekyll cannot parse `.astro` files. And never "fix" that with
 `.nojekyll` file: under branch mode it publishes the raw repository root instead of the
 built site.
 
-Local git authenticates as `mohiseen-aumni`; the repository is owned by `CreativeDigitalGrowth`.
-Write access yes, admin no — repository settings cannot be changed from here.
+Local git authenticates as `LocalSEOHUB`; the repository is owned by `LocalSEOHUB`.
+Full write and admin access from here.
 
 ## Documentation
 

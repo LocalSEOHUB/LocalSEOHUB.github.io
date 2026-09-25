@@ -43,8 +43,8 @@ and pagination need a real build step, not a plugin whitelist.
 To confirm at any time:
 
 ```bash
-gh api repos/CreativeDigitalGrowth/CreativeDigitalGrowth.github.io/pages --jq '.build_type'   # expect: workflow
-gh run list --repo CreativeDigitalGrowth/CreativeDigitalGrowth.github.io --limit 3
+gh api repos/LocalSEOHUB/LocalSEOHUB.github.io/pages --jq '.build_type'   # expect: workflow
+gh run list --repo LocalSEOHUB/LocalSEOHUB.github.io --limit 3
 ```
 
 ## 2. Access token for the CMS
@@ -60,8 +60,8 @@ Two kinds of token work, and which one you can use depends on **who owns the rep
 
 | Field | Value |
 | --- | --- |
-| Resource owner | `CreativeDigitalGrowth` |
-| Repository access | **Only select repositories → `CreativeDigitalGrowth.github.io`** |
+| Resource owner | `LocalSEOHUB` |
+| Repository access | **Only select repositories → `localseohub.github.io`** |
 | Repository permissions → **Contents** | **Read and write** |
 | Repository permissions → Metadata | Read-only (added automatically) |
 | Expiration | Set one. 90 days is a reasonable default |
@@ -93,7 +93,7 @@ strictly tighter. Prefer fine-grained when the owner account is available to you
 
 Whichever you use, commits are authored by the account that issued the token.
 
-Then open <https://creativedigitalgrowth.github.io/admin/>, choose **"Sign In Using Access
+Then open <https://localseohub.github.io/admin/>, choose **"Sign In Using Access
 Token"** and paste it.
 
 > There is no "Sign In with GitHub" button on the login screen. It starts an OAuth flow
@@ -115,14 +115,14 @@ configured, post pages show a one-line notice instead of the widget — nothing 
 2. Open the **Discussions** tab and make sure a category exists. The default expected by
    `src/consts.ts` is **Announcements**; any category works as long as the names match.
 3. Install the app at <https://github.com/apps/giscus> and grant it access to
-   `CreativeDigitalGrowth/CreativeDigitalGrowth.github.io` **only**.
-4. Go to <https://giscus.app>, enter `CreativeDigitalGrowth/CreativeDigitalGrowth.github.io`, pick the category, and choose
+   `LocalSEOHUB/LocalSEOHUB.github.io` **only**.
+4. Go to <https://giscus.app>, enter `LocalSEOHUB/LocalSEOHUB.github.io`, pick the category, and choose
    *Discussion title contains page pathname* for the mapping.
 5. Copy the generated `data-repo-id` and `data-category-id` into `src/consts.ts`:
 
 ```ts
 export const GISCUS = {
-  repo: 'CreativeDigitalGrowth/CreativeDigitalGrowth.github.io',
+  repo: 'LocalSEOHUB/LocalSEOHUB.github.io',
   repoId: 'R_kg...',        // ← paste
   category: 'Announcements',
   categoryId: 'DIC_kw...',  // ← paste

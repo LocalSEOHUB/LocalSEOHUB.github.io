@@ -1,7 +1,7 @@
 /**
  * Single place to edit the blog's identity. Nothing else hardcodes these values.
  */
-export const SITE_TITLE = 'Creative Digital Growth';
+export const SITE_TITLE = 'LocalSEOHUB';
 export const SITE_DESCRIPTION =
   'A small, fast, hand-built blog about the things worth writing down.';
 
@@ -9,7 +9,7 @@ export const SITE_DESCRIPTION =
 export const AUTHOR_NAME = 'Your Name';
 export const AUTHOR_BIO =
   'One-line bio goes here — who you are and what you write about.';
-export const AUTHOR_EMAIL = 'you@example.com';
+export const AUTHOR_EMAIL = 'hello@localseohub.com';
 
 /** Default social image, relative to /public. Used when a page has no image of its own. */
 export const DEFAULT_OG_IMAGE = '/social-card.png';
@@ -43,9 +43,11 @@ export const TOC_MIN_HEADINGS = 3;
  * section renders a short notice instead of the widget.
  */
 export const GISCUS = {
-  repo: 'CreativeDigitalGrowth/CreativeDigitalGrowth.github.io',
+  repo: 'LocalSEOHUB/LocalSEOHUB.github.io',
+  // TODO: fill in after enabling Giscus on the new repo
   repoId: '',
   category: 'Announcements',
+  // TODO: fill in after enabling Giscus on the new repo
   categoryId: '',
   mapping: 'pathname',
   reactionsEnabled: '1',
@@ -61,5 +63,5 @@ export const CONTACT_FORM_ENDPOINT = '';
 
 /** Optional social links shown in the footer. Remove any you do not use. */
 export const SOCIAL_LINKS = [
-  { label: 'GitHub', href: 'https://github.com/CreativeDigitalGrowth' },
+  { label: 'GitHub', href: 'https://github.com/LocalSEOHUB' },
 ] as const;

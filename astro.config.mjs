@@ -7,7 +7,7 @@ import sitemap from '@astrojs/sitemap';
 // src/lib/url.ts still mediates every internal link, so the site can move back under
 // a sub-path (or onto a custom domain) by changing `site`/`base` here and nothing else.
 export default defineConfig({
-  site: 'https://creativedigitalgrowth.github.io',
+  site: 'https://localseohub.github.io',
   trailingSlash: 'always',
   integrations: [
     sitemap({

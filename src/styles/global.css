@@ -268,15 +268,11 @@ main {
 }
 
 .brand .mark {
-  display: grid;
-  place-items: center;
+  display: block;
   width: 1.9rem;
   height: 1.9rem;
   border-radius: 7px;
-  background: var(--accent);
-  color: var(--accent-contrast);
-  font-size: 0.95rem;
-  font-weight: 700;
+  object-fit: contain;
 }
 
 .site-nav {

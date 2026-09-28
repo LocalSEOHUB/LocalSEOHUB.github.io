@@ -1,5 +1,5 @@
 ---
-import { SITE_TITLE, SOCIAL_LINKS, FEATURES } from '../consts';
+import { SITE_TITLE, SOCIAL_LINKS, SIBLING_SITES, FEATURES } from '../consts';
 import { withBase } from '../lib/url';
 
 const year = new Date().getFullYear();
@@ -27,6 +27,21 @@ const year = new Date().getFullYear();
           <li>
             <a href={link.href} rel="me noopener">
               {link.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+
+  <div class="wrap">
+    <p class="footer-note">Same content, every static host:</p>
+    <ul class="footer-links sibling-links">
+      {
+        SIBLING_SITES.map((site) => (
+          <li>
+            <a href={site.href} rel="noopener">
+              {site.label}
             </a>
           </li>
         ))

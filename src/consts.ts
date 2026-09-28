@@ -65,3 +65,12 @@ export const CONTACT_FORM_ENDPOINT = '';
 export const SOCIAL_LINKS = [
   { label: 'GitHub', href: 'https://github.com/LocalSEOHUB' },
 ] as const;
+
+/** Sibling LocalSEOHUB blogs — same content family, one per static host. */
+export const SIBLING_SITES = [
+  { label: 'Cloudflare Pages', href: 'https://localseohub.pages.dev/' },
+  { label: 'Netlify', href: 'https://localseohub.netlify.app/' },
+  { label: 'Vercel', href: 'https://localseohub.vercel.app/' },
+  { label: 'Firebase', href: 'https://localseohub-3d04d.firebaseapp.com/' },
+  { label: 'Bolt.new', href: 'https://localseohub.bolt.host/' },
+] as const;
